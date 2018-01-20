@@ -11,6 +11,8 @@
  */
 const db = require('../server/db')
 const {User} = require('../server/db/models')
+const {UserWallet} = require('../server/db/models')
+const {Order} = require('../server/db/models')
 
 async function seed () {
   await db.sync({force: true})
@@ -25,6 +27,13 @@ async function seed () {
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
+
+  const userWallets = await Promise.all([
+    UserWallet.create({coins: ['btc', 'xvg'], coinsAmount: [1.5, 125000], userId: 1}),
+    UserWallet.create({coins: ['btc', 'eth'], coinsAmount: [0.25, 22.22], userId: 2})
+  ])
+  console.log(`seeded ${userWallets.length} userWallets`)
+
   console.log(`seeded successfully`)
 }
 

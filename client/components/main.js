@@ -12,7 +12,7 @@ import {logout} from '../store'
  */
 const Main = (props) => {
   const {children, handleClick, isLoggedIn} = props
-
+  console.log(props)
   return (
     <div>
       <h1>BOILERMAKER</h1>
