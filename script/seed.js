@@ -29,8 +29,8 @@ async function seed () {
   console.log(`seeded ${users.length} users`)
 
   const userWallets = await Promise.all([
-    UserWallet.create({coins: ['btc', 'xvg'], coinsAmount: [1.5, 125000], userId: 1}),
-    UserWallet.create({coins: ['btc', 'eth'], coinsAmount: [0.25, 22.22], userId: 2})
+    UserWallet.create({coins: ['BTC', 'XVG'], coinsAmount: [1.5, 125000], userId: 1}),
+    UserWallet.create({coins: ['BTC', 'ETH'], coinsAmount: [0.25, 22.22], userId: 2})
   ])
   console.log(`seeded ${userWallets.length} userWallets`)
 

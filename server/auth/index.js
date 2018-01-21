@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const User = require('../db/models/user')
+const UserWallet = require('../db/models/userWallet')
 module.exports = router
 
 router.post('/login', (req, res, next) => {
@@ -20,7 +21,9 @@ router.post('/signup', (req, res, next) => {
   User.create(req.body)
     .then(user => {
       req.login(user, err => (err ? next(err) : res.json(user)))
+      return user.id
     })
+    .then((userId) => UserWallet.create({userId}))
     .catch(err => {
       if (err.name === 'SequelizeUniqueConstraintError') {
         res.status(401).send('User already exists')
