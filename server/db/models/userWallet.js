@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const UserWallet = db.define('user wallet', {
+const UserWallet = db.define('wallet', {
 	coins: {
 		type: Sequelize.ARRAY(Sequelize.TEXT),
 		allowNull: false,

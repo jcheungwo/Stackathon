@@ -12,10 +12,9 @@ import {logout} from '../store'
  */
 const Main = (props) => {
   const {children, handleClick, isLoggedIn} = props
-  console.log(props)
   return (
     <div>
-      <h1>BOILERMAKER</h1>
+      <Link to='/home'><h1 style={{color: '#006600', textAlign: 'center', fontFamily: "'Amiri', serif"}}>Crypto Market Game</h1></Link>
       <nav>
         {
           isLoggedIn

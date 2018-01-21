@@ -1,9 +1,11 @@
 body {
   font-family: sans-serif;
+  background-color: #F0F8FF;
 }
 
 a {
   text-decoration: none;
+  color: #006600
 }
 
 label {
