@@ -5,7 +5,7 @@ const currencyUtils = {};
 
 currencyUtils.seedCurrencies = () => {
 	Currency.destroy({where: {}, truncate: {}})
-	.then(() => axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=100'))
+	.then(() => axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=1453'))
 	.then(res => res.data)
 	.then((currencies) => {
 		currencies.map((currency) => {
@@ -21,7 +21,7 @@ currencyUtils.seedCurrencies = () => {
 }
 
 currencyUtils.updateCurrencies = () => {
-	axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=100')
+	axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=1453')
 	.then(res => res.data)
 	.then((currencies) => {
 		currencies.map((currency) => {
