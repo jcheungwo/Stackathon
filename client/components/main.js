@@ -14,7 +14,7 @@ const Main = (props) => {
   const {children, handleClick, isLoggedIn} = props
   return (
     <div>
-      <Link to='/home'><h1 style={{color: '#006600', textAlign: 'center', fontFamily: "'Amiri', serif"}}>Crypto Market Game</h1></Link>
+      <Link to='/home'><h1 style={{color: '#4EB1BA', textAlign: 'center', fontFamily: "'Amiri', serif"}}>Crypto Market Game</h1></Link>
       <nav>
         {
           isLoggedIn

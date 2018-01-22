@@ -10,7 +10,7 @@ export const UserHome = (props) => {
   const {email, user} = props
   return (
     <div>
-      <h3>Welcome, {email}</h3>
+      <h3 style={{textAlign:'center', color:'#E9E9E9'}}>Welcome, {email.split('@')[0].replace(/\b\w/g, l => l.toUpperCase())}</h3>
       <UserInfo userId={user.id} />
     </div>
   )

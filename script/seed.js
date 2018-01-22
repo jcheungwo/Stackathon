@@ -30,9 +30,17 @@ async function seed () {
 
   const userWallets = await Promise.all([
     UserWallet.create({coins: ['BTC', 'XVG'], coinsAmount: [1.5, 125000], userId: 1}),
-    UserWallet.create({coins: ['BTC', 'ETH'], coinsAmount: [0.25, 22.22], userId: 2})
+    UserWallet.create({coins: ['BTC', 'ETH'], coinsAmount: [0.25, 22.22222222], userId: 2})
   ])
   console.log(`seeded ${userWallets.length} userWallets`)
+
+  const orders = await Promise.all([
+    Order.create({symbol: 'ETH', type: 'Buy', coinAmount: 25, price: 0.022152, userId:1}),
+    Order.create({symbol: 'ETH', type: 'Sell', coinAmount: 25, price: 0.10211, userId:1}),
+    Order.create({symbol: 'XVG', type: 'Buy', coinAmount: 125000, price: .0000055, userId:1}),
+    Order.create({symbol: 'ETH', type: 'Buy', coinAmount: 22.22222222, price: 0.034065, userId: 2})
+  ])
+  console.log(`seeded ${orders.length} orders`)
 
   console.log(`seeded successfully`)
 }

@@ -4,11 +4,14 @@ const db = require('../db')
 const Order = db.define('order', {
 	symbol: {
 		type: Sequelize.STRING,
-		unique: true,
+		allowNull: false
+	},
+	type: {
+		type: Sequelize.STRING,
 		allowNull: false
 	},
 	coinAmount: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.FLOAT,
 		allowNull: false
 	},
 	price: {
