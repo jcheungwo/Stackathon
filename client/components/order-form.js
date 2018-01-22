@@ -23,7 +23,7 @@ class OrderForm extends Component {
 					onChange={(event) => this.props.handleChange.call(this, event)}
 					hintText="Enter Symbol"
 				/>
-				<span style={{fontSize:25}}>CoinPrice: {this.state.currentCurrency.price}</span>
+				<span style={{fontSize:25, color:'#4EB1BA'}}>Current Price: {this.state.currentCurrency.price}</span>
 				<form onSubmit={(event) => this.props.handleOrderSubmit.call(this, event)} style={{}}>
 					<input
 						value={volume}

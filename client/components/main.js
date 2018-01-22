@@ -14,18 +14,24 @@ const Main = (props) => {
   const {children, handleClick, isLoggedIn} = props
   return (
     <div>
-      <Link to='/home'><h1 style={{color: '#4EB1BA', textAlign: 'center', fontFamily: "'Amiri', serif"}}>Crypto Market Game</h1></Link>
-      <nav>
+      <div style={{display: 'flex', justifyContent: 'center'}} >
+        <img src="https://seeklogo.com/images/B/bitcoin-logo-DDAEEA68FA-seeklogo.com.png" height="80" width="80"/>
+        <Link to='/home'><h1 style={{color: '#4EB1BA', textAlign: 'center', fontFamily: "'Amiri', serif"}}>Crypto Market Game</h1></Link>
+        <img src="https://seeklogo.com/images/B/bitcoin-logo-DDAEEA68FA-seeklogo.com.png" height="80" width="80"/>
+      </div>
+      <nav align="center">
         {
           isLoggedIn
             ? <div>
               {/* The navbar will show these links after you log in */}
               <Link to="/home">Home</Link>
+              <Link to="/leaderboard">Monthly LeaderBoard</Link>
               <a href="#" onClick={handleClick}>Logout</a>
             </div>
             : <div>
               {/* The navbar will show these links before you log in */}
               <Link to="/login">Login</Link>
+              <Link to="/leaderboard">Monthly LeaderBoard</Link>
               <Link to="/signup">Sign Up</Link>
             </div>
         }

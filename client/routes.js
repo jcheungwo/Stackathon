@@ -6,6 +6,7 @@ import history from './history'
 import {Main, Login, Signup, UserHome} from './components'
 import {me} from './store'
 import {MuiThemeProvider} from 'material-ui/styles';
+import LeaderBoard from './components/LeaderBoard'
 
 /**
  * COMPONENT
@@ -26,6 +27,7 @@ class Routes extends Component {
               {/* Routes placed here are available to all visitors */}
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
+              <Route path="/leaderboard" component={LeaderBoard} />
               {
                 isLoggedIn &&
                   <Switch>
